@@ -1,0 +1,45 @@
+# Exemplo básico de um workflow
+
+name: CI
+
+# Controla quando que este workflow vai rodar no projeto
+on:
+  # Vai ser ativado quando for feito um pull_request(PR) para a branch "main"
+  pull_request:
+    branches: [ main ]
+
+  # Permite rodar este workflow diretamente da aba do Actions
+  workflow_dispatch:
+
+# É composto por um ou vários jobs, podendo ser pararelos ou sequenciais
+jobs:
+  # This workflow contains a single job called "build"
+  pipeline:
+    # O tipo do "runner" que vai ser usado por essa maquina
+    runs-on: ubuntu-latest
+  
+    # Dependencias que são necessárias para o projeto
+    strategy:
+      matrix:
+        node_version: [16.x]
+  
+    # Sequencia de passos que vão ser executados
+    steps:
+      # Faz checkout no repositório, necessário para que o job consiga acessar os arquivos do projeto
+      - uses: actions/checkout@v3
+      
+      # Instala todas as dependencias do projeto 
+      - name: Install dependencies
+        run: npm install
+        
+      # Instala o nestjs 
+      - name: Install nest.js
+        run: npm install -g @nestjs/cli
+        
+      # Executa o comando "build" 
+      - name: Build project
+        run: npm run build
+
+      # Executa todos os testes
+      - name: Run tests
+        run: npm run test
