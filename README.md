@@ -38,6 +38,6 @@ $ npm run test:cov
 
 ## Contato
 
-- Author - [Igor Dalepiane da Costa](https://github.com/IgorDalepiane)
+- Autor - [Igor Dalepiane da Costa](https://github.com/IgorDalepiane)
 - LinkedIn - https://www.linkedin.com/in/igordalepiane/
 - Email - igordalepiane@gmail.com
