@@ -4,6 +4,8 @@ Neste tutorial, alguns processos principais para a criação e utilização de p
 
 As páginas com os conteúdos, se encontram na aba "Actions" do repositório.
 
+A aplicação esta hospedada no link: https://cicd-tutorial-pipeline.herokuapp.com/
+
 ## Instalar as dependências do projeto
 
 ```bash
